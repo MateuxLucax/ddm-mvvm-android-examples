@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">cep</string>
+    <string name="app_name">Buscador por CEP</string>
     <string name="search_type_cep">Digite um CEP</string>
     <string name="search_btn">Buscar</string>
     <string name="search_city">Cidade</string>

@@ -12,6 +12,10 @@ public class SearchCepUseCase {
     }
 
     public Result<Cep> execute(String id) {
+        if (id == null || id.length() != 8) {
+            return new Result<>(new Exception("Invalid CEP format"));
+        }
+
         return repository.search(id);
     }
 
