@@ -35,14 +35,14 @@ xmlns:tools="http://schemas.android.com/tools">
                 android:inputType="textPersonName"
                 android:text="@={vm.cepDigitado}"
                 android:error="@{vm.erro}"
-                />
+                android:importantForAutofill="no" />
 
             <Button
                 android:id="@+id/btBuscar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="@{vm::buscarCep}"
+                android:onClick="@{vm::searchCep}"
                 android:enabled="@{vm.formatoCepValido}"
                 android:text="@string/search_btn" />
 

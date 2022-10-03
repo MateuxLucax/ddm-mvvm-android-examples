@@ -9,8 +9,6 @@ import androidx.databinding.Bindable;
 
 import com.example.cep.BR;
 import com.example.cep.data.common.util.Result;
-import com.example.cep.data.common.util.RetrofitInitializer;
-import com.example.cep.data.search.datasource.remote.CepService;
 import com.example.cep.domain.model.Cep;
 import com.example.cep.domain.usecase.search.SearchCepUseCase;
 
@@ -83,17 +81,13 @@ public class SearchCepViewModel extends BaseObservable {
         return cep == null ? "" : cep.getCep();
     }
 
-    public void buscarCep(View view) {
+    public void searchCep(View view) {
         setErro(null);
-
-        Handler handler = new Handler();
-
-        CepService cepService = new RetrofitInitializer().getCep();
 
         Result<Cep> result = useCase.execute(this.cepDigitado);
 
         if (result.hasError()) {
-            handler.post(() -> Toast.makeText(view.getContext(), "Error: (" + result.getError().getMessage() + ")", Toast.LENGTH_LONG).show());
+            new Handler().post(() -> Toast.makeText(view.getContext(), "Error: (" + result.getError().getMessage() + ")", Toast.LENGTH_LONG).show());
         } else if (result.getResponse() != null) {
             Cep cep = result.getResponse();
             if (cep.getErro()) {

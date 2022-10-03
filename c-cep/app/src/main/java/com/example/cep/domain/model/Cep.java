@@ -59,6 +59,65 @@ public class Cep {
         return siafi;
     }
 
+    public Cep setCep(String cep) {
+        this.cep = cep;
+        return this;
+    }
+
+    public Cep setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+        return this;
+    }
+
+    public Cep setComplemento(String complemento) {
+        this.complemento = complemento;
+        return this;
+    }
+
+    public Cep setBairro(String bairro) {
+        this.bairro = bairro;
+        return this;
+    }
+
+    public Cep setLocalidade(String localidade) {
+        this.localidade = localidade;
+        return this;
+    }
+
+    public Cep setUf(String uf) {
+        this.uf = uf;
+        return this;
+    }
+
+    public Cep setIbge(String ibge) {
+        this.ibge = ibge;
+        return this;
+    }
+
+    public Cep setGia(String gia) {
+        this.gia = gia;
+        return this;
+    }
+
+    public Cep setDdd(String ddd) {
+        this.ddd = ddd;
+        return this;
+    }
+
+    public Cep setSiafi(String siafi) {
+        this.siafi = siafi;
+        return this;
+    }
+
+    public boolean isErro() {
+        return erro;
+    }
+
+    public Cep setErro(boolean erro) {
+        this.erro = erro;
+        return this;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -71,5 +130,6 @@ public class Cep {
     public int hashCode() {
         return Objects.hash(cep);
     }
+
 }
 
