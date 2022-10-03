@@ -1,5 +1,7 @@
 package com.example.cep.data.common.util;
 
+import java.util.Objects;
+
 public class Result<T> {
 
     private T response;
@@ -36,4 +38,16 @@ public class Result<T> {
         return error != null;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Result<?> result = (Result<?>) o;
+        return Objects.equals(response, result.response) && Objects.equals(error, result.error);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(response, error);
+    }
 }
