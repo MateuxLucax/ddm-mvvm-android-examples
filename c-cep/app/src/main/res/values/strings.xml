@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">cep</string>
+    <string name="search_type_cep">Digite um CEP</string>
+    <string name="search_btn">Buscar</string>
+    <string name="search_city">Cidade</string>
+    <string name="search_neighborhood">Bairro</string>
+    <string name="search_address">Logradouro</string>
+    <string name="search_cep">CEP</string>
+</resources>
