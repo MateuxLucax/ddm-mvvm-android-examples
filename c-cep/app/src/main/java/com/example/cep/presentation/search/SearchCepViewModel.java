@@ -1,8 +1,6 @@
 package com.example.cep.presentation.search;
 
-import android.os.Handler;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.databinding.BaseObservable;
 import androidx.databinding.Bindable;
@@ -87,7 +85,7 @@ public class SearchCepViewModel extends BaseObservable {
         Result<Cep> result = useCase.execute(this.cepDigitado);
 
         if (result.hasError()) {
-            new Handler().post(() -> Toast.makeText(view.getContext(), "Error: (" + result.getError().getMessage() + ")", Toast.LENGTH_LONG).show());
+            setErro("Error: (" + result.getError().getMessage() + ")");
         } else if (result.getResponse() != null) {
             Cep cep = result.getResponse();
             if (cep.getErro()) {

@@ -28,23 +28,26 @@ xmlns:tools="http://schemas.android.com/tools">
 
             <EditText
                 android:id="@+id/edCep"
-                android:layout_width="239dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/search_type_cep"
-                android:inputType="textPersonName"
-                android:text="@={vm.cepDigitado}"
                 android:error="@{vm.erro}"
-                android:importantForAutofill="no" />
+                android:hint="@string/search_type_cep"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="@={vm.cepDigitado}"
+                android:textColorHint="#757575" />
 
             <Button
                 android:id="@+id/btBuscar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="@{vm::searchCep}"
                 android:enabled="@{vm.formatoCepValido}"
-                android:text="@string/search_btn" />
+                android:onClick="@{vm::searchCep}"
+                android:text="@string/search_btn"
+                tools:ignore="TouchTargetSizeCheck" />
 
         </LinearLayout>
 
